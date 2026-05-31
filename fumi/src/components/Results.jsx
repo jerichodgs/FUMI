@@ -199,7 +199,7 @@ export default function Results({ userPrefs, onRestart }) {
         transition={{ duration: 0.4 }}
       >
         <p className="text-xs uppercase tracking-widest mb-1" style={{ color: 'rgba(200,110,40,0.7)' }}>
-          your matches ✨
+          your matches
         </p>
         <h2 className="text-2xl font-bold" style={{ color: '#f2ece4' }}>
           Here's what fumi found!
@@ -217,7 +217,7 @@ export default function Results({ userPrefs, onRestart }) {
 
       <motion.button
         onClick={onRestart}
-        className="mt-8 w-full py-3.5 rounded-2xl text-sm font-medium transition-all"
+        className="cursor-pointer mt-8 w-full py-3.5 rounded-2xl text-sm font-medium transition-all"
         style={{ border: '1px solid rgba(255,255,255,0.07)', color: 'rgba(242,236,228,0.3)' }}
         whileHover={{ borderColor: 'rgba(255,255,255,0.18)', color: 'rgba(242,236,228,0.6)' }}
         initial={{ opacity: 0 }}

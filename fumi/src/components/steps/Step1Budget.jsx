@@ -39,9 +39,9 @@ function Step1Budget({ value, onSelect, onNext }) {
         onClick={onNext}
         disabled={!value}
         className="mt-6 w-full py-3 rounded-2xl bg-amber-700 text-white text-sm font-medium
-          disabled:opacity-30 disabled:cursor-not-allowed hover:bg-amber-600 transition-all"
+          disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer hover:bg-amber-600 transition-all"
       >
-        Continue →
+        Continue
       </button>
     </motion.div>
   )

@@ -52,16 +52,16 @@ return (
       <div className="flex gap-3 mt-6">
         <button
           onClick={onBack}
-          className="px-5 py-3 rounded-2xl border border-white/10 text-white/40 text-sm hover:border-white/20 transition-all"
+          className="cursor-pointer px-5 py-3 rounded-2xl border border-white/10 text-white/40 text-sm hover:border-white/20 transition-all"
         >
-          ← Back
+          Back
         </button>
         {/* disabled removed — notes are now optional */}
         <button
           onClick={onNext}
-          className="flex-1 py-3 rounded-2xl bg-amber-700 text-white text-sm font-medium hover:bg-amber-600 transition-all"
+          className="disabled:cursor-not-allowed cursor-pointer flex-1 py-3 rounded-2xl bg-amber-700 text-white text-sm font-medium hover:bg-amber-600 transition-all"
         >
-          Continue →
+          Continue
         </button>
       </div>
     </motion.div>

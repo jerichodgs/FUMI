@@ -64,22 +64,22 @@ export default function Step2Occasion({ value, onSelect, onNext, onBack }) {
       <div className="flex gap-3 mt-6">
         <button
           onClick={onBack}
-          className="px-5 py-3 rounded-2xl text-sm transition-all"
+          className="cursor-pointer px-5 py-3 rounded-2xl text-sm transition-all"
           style={{ border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(242,236,228,0.35)' }}
         >
-          ← Back
+          Back
         </button>
         <button
           onClick={onNext}
           disabled={selected.length === 0}
-          className="flex-1 py-3 rounded-2xl text-sm font-semibold transition-all disabled:opacity-30"
+          className="disabled:cursor-not-allowed cursor-pointer flex-1 py-3 rounded-2xl text-sm font-semibold transition-all disabled:opacity-30"
           style={{
             background: 'linear-gradient(135deg, #d4721f, #b05a14)',
             color: '#fff8f0',
             boxShadow: selected.length > 0 ? '0 4px 16px rgba(180,90,20,0.35)' : 'none',
           }}
         >
-          Continue →
+          Continue
         </button>
       </div>
     </motion.div>

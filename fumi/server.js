@@ -28,9 +28,18 @@ app.post('/recommend', async (req, res) => {
     let filtered = perfumes.filter(p => p.budgetRange === budget)
 
     // 2. Filter by gender
-    if (gender && gender !== 'unisex') {
+    if (gender === 'masculine') {
       filtered = filtered.filter(p =>
-        p.gender.includes(gender) || p.gender.includes('unisex')
+        p.gender.includes('masculine')
+      )
+    } else if (gender === 'feminine') {
+      filtered = filtered.filter(p =>
+        p.gender.includes('feminine')
+      )
+    } else if (gender === 'unisex') {
+      // Unisex = ONLY perfumes explicitly tagged as unisex
+      filtered = filtered.filter(p =>
+        p.gender.includes('unisex')
       )
     }
 
@@ -59,6 +68,7 @@ app.post('/recommend', async (req, res) => {
 
 User preferences:
 - Occasion(s): ${occasionText}
+- Gender preference: ${gender === 'unisex' ? 'Unisex only — must work for both men and women, no gendered fragrances' : gender}
 - Scent notes they like: ${notesText}
 - Location: ${locationText}
 - Gender profile: ${gender}
