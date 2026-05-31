@@ -33,10 +33,10 @@ function FumiLogo() {
 // Subtle background bottles carried into the step pages
 function StepBackground() {
   const bottles = [
-    { src: '/images/afnan-9pm.avif',        style: { top: '12%',   left: '4%',  width: 280, rotate: -22 } },
-    { src: '/images/lattafa-yara.avif',     style: { top: '30%',   right: '0%', width: 260, rotate: -15   } },
-    { src: '/images/acqua-di-gio-edp.avif',       style: { bottom: '-5%',left: '25%',   width: 270, rotate: 10 } },
-    { src: '/images/prada-paradoxe.avif',       style: { bottom: '-1%',right: '25%',   width: 270, rotate: -10 } }
+    { src: '/images/afnan-9pm.avif',        style: { top: '8%',    left: '-5%',  width: 'clamp(120px, 20vw, 260px)', rotate: -22 } },
+    { src: '/images/lattafa-yara.avif',     style: { top: '35%',   right: '-3%', width: 'clamp(110px, 18vw, 240px)', rotate: -15 } },
+    { src: '/images/acqua-di-gio-edp.avif', style: { bottom: '-4%',left: '20%',  width: 'clamp(115px, 19vw, 250px)', rotate: 10  } },
+    { src: '/images/prada-paradoxe.avif',   style: { bottom: '-2%',right: '18%', width: 'clamp(115px, 19vw, 250px)', rotate: -10 } },
   ]
 
   return (
@@ -45,7 +45,15 @@ function StepBackground() {
         <motion.div
           key={i}
           className="fixed pointer-events-none select-none"
-          style={{ top: b.style.top, left: b.style.left, right: b.style.right, bottom: b.style.bottom, width: b.style.width, rotate: b.style.rotate, zIndex: 0 }}
+          style={{ 
+            top: b.style.top, 
+            left: b.style.left, 
+            right: b.style.right, 
+            bottom: b.style.bottom, 
+            width: b.style.width,  // already a string like 'clamp(...)' so this works
+            rotate: b.style.rotate, 
+            zIndex: 0 
+          }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: i * 0.1, duration: 1.2 }}
