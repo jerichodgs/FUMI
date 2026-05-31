@@ -127,7 +127,7 @@ export default function Results({ userPrefs, onRestart }) {
   useEffect(() => {
     const getRecommendations = async () => {
       try {
-        const response = await fetch('http://localhost:3001/recommend', {
+        const response = await fetch('https://fumi-dir8.onrender.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ userPrefs })
